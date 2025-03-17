@@ -7,7 +7,13 @@
     <link rel="icon" type="image/png" href="static\assets\image\profil.jpg">
     <link rel="stylesheet" href="/static/assets/css/style.css">
     <style>
-        
+        .download-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            font-size: 10px;
+        }
     </style>
 </head>
 <body>
@@ -19,7 +25,7 @@
                 <li class="dropdown">
                     <a href="#portofolio">Portfolio</a>
                     <ul class="dropdown-menu">
-                        <li><a onclick="downloadFromDrive()">Download CV</a></li>
+                        <li><button class="download-btn"  onclick="downloadFromDrive()">Download CV</button></li>
                     </ul>
                 </li>
                 <li><a href="#study">Skripsi</a></li>
