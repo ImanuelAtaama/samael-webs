@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Header Design</title>
+    <title>Samael</title>
+    <link rel="icon" type="image/png" href="static\assets\image\profil.jpg">
     <link rel="stylesheet" href="/static/assets/css/style.css">
     <style>
         
@@ -18,7 +19,7 @@
                 <li class="dropdown">
                     <a href="#portofolio">Portfolio</a>
                     <ul class="dropdown-menu">
-                        <li><a href="CV-Imanuel Ataama.pdf" download="CV-Imanuel Ataama.pdf.pdf" type="application/pdf">CV</a></li>
+                        <li><a onclick="downloadFromDrive()">Download CV</a></li>
                     </ul>
                 </li>
                 <li><a href="#study">Skripsi</a></li>
@@ -131,8 +132,20 @@
     </footer>
 
     <script>
+        function downloadFromDrive() {
+            const fileID = "1TFm55nybrg0Ji02kOCFpS9OTUQGi-l-T";
+            const downloadURL = `https://drive.google.com/uc?export=download&id=${fileID}`;
+            
+            const link = document.createElement("a");
+            link.href = downloadURL;
+            link.setAttribute("download", "CV-Imanuel Ataama.pdf"); 
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
         function showPopup(event) {
-            event.preventDefault(); // Mencegah link dari berpindah halaman
+            event.preventDefault(); 
             alert("Sedang dalam perbaikan");
         }
 
@@ -144,7 +157,7 @@
     
                 if (targetSection) {
                     window.scrollTo({
-                        top: targetSection.offsetTop - 70, // Sesuaikan dengan tinggi header
+                        top: targetSection.offsetTop - 70, 
                         behavior: 'smooth'
                     });
                 }
@@ -181,7 +194,7 @@
             }
         }
         
-        // Cek saat halaman dimuat dan saat layar diubah
+
         checkScreenSize();
         window.addEventListener("resize", checkScreenSize);        
     </script>
